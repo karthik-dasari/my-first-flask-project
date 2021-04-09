@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <title>Welcome {{ session.name }}</title>
+</head>
+<body>
+    <div class="index-box-outer">
+        <div class="index-box-inner">
+            <h1>Welcome {{ session.name }}</h1><br> 
+            <a href="/logout" class="btn">Logout</a>
+        </div>
+    </div>
+</body>
+</html>

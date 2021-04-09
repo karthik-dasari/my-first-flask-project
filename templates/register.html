@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+    <div class="registration-box-outer">
+        <div class="registration-box-inner">
+            <h1>Registration</h1>
+            <form action="/register" method="POST">
+                {% if name %}
+                <div class="textbox"><input type="text" placeholder="Name" name="name" value="{{name}}"></div>
+                {% else %}
+                <div class="textbox"><input type="text" placeholder="Name" name="name"></div>
+                {% endif %}
+                {% if username %}
+                <div class="textbox"><input type="text" placeholder="Username" name="username" value="{{username}}"></div>
+                {% else %}
+                <div class="textbox"><input type="text" placeholder="Username" name="username"></div>
+                {% endif %}
+                {% if email %}
+                <div class="textbox"><input type="email" placeholder="Email Id" name="email" value="{{email}}"></div>
+                {% else %}
+                <div class="textbox"><input type="email" placeholder="Email Id" name="email"></div>
+                {% endif %}
+                <div class="textbox"><input type="password" placeholder="Password" name="password"></div>
+                {% if msg %}
+                {{ msg }}
+                {% endif %}
+                <input class="btn" type="submit" value="Sign Up">
+            </form>
+            <div>Already Have an account?
+                <a href="/login">Login</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
